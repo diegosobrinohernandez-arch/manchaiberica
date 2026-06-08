@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mancha Ibérica — Servicios Cinegéticos · Monterías 2026/2027</title>
+<meta name="description" content="Mancha Ibérica Servicios Cinegéticos. Calendario de monterías en abierto 2026/2027. manchaiberica@gmail.com · 677 507 492 / 606 613 167">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --verde:    #1c3528;
+  --verde-med:#2c5040;
+  --ocre:     #c49620;
+  --tierra:   #9a6b3e;
+  --rojo:     #b8081e;
+  --crema:    #f4ead8;
+  --marfil:   #faf5ec;
+  --negro:    #0d0a06;
+  --display:  'Playfair Display',serif;
+  --serif:    'Libre Baskerville',serif;
+  --sans:     'Montserrat',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--marfil);color:var(--negro);font-family:var(--sans);font-weight:300;line-height:1.65;overflow-x:hidden}
+
+/* PROGRESO */
+#barra{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--verde),var(--ocre));z-index:1000;transition:width .1s}
+
+/* NAV — siempre con fondo para evitar superposición */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.4rem 3rem;
+  background:rgba(14,28,20,.85);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(196,150,32,.08);
+  transition:background .35s,box-shadow .35s
+}
+nav.scrolled{background:rgba(28,53,40,.97);box-shadow:0 2px 20px rgba(0,0,0,.35)}
+.logo-nav{text-decoration:none;display:flex;flex-direction:column;line-height:1}
+.logo-top{font-family:var(--display);font-weight:900;font-size:1.3rem;letter-spacing:.06em;color:#fff}
+.logo-bot{font-family:var(--sans);font-weight:300;font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.2rem}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-tel{font-size:.66rem;letter-spacing:.08em;color:rgba(255,255,255,.45);text-decoration:none;font-family:var(--sans);transition:color .2s}
+.nav-tel:hover{color:var(--ocre)}
+.btn-wa-sm{
+  display:inline-flex;align-items:center;gap:.4rem;
+  background:#25D366;color:#fff;font-family:var(--sans);font-weight:600;
+  font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.45rem 1rem;border-radius:2px;text-decoration:none;
+  transition:background .2s,transform .15s
+}
+.btn-wa-sm:hover{background:#1da851;transform:translateY(-1px)}
+
+/* HERO */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:9rem 0 8rem;
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#0e1c14 0%,#1c3528 45%,#0f1a10 100%)
+}
+#hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 70% 20%,rgba(196,150,32,.1) 0%,transparent 55%),
+    radial-gradient(ellipse at 15% 85%,rgba(154,107,62,.12) 0%,transparent 50%);
+  pointer-events:none
+}
+#hero::after{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+  pointer-events:none
+}
+.hero-linea{position:absolute;top:0;right:20%;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(196,150,32,.18) 30%,rgba(196,150,32,.18) 70%,transparent);z-index:1;pointer-events:none}
+.hero-inner{
+  position:relative;z-index:2;
+  padding:0 3rem 0 max(3rem,calc((100vw - 1100px)/2 + 3rem));
+  max-width:calc(1100px + 6rem)
+}
+.hero-eyebrow{
+  font-family:var(--sans);font-weight:400;font-size:.62rem;letter-spacing:.5em;text-transform:uppercase;
+  color:var(--ocre);margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem;
+  opacity:0;animation:au .7s .2s forwards
+}
+.hero-eyebrow::before{content:'';display:inline-block;width:28px;height:1px;background:rgba(196,150,32,.5)}
+h1{
+  font-family:var(--display);font-weight:900;
+  font-size:clamp(4.5rem,11vw,10rem);
+  line-height:.88;color:#fff;letter-spacing:.01em;
+  margin-bottom:2.8rem;
+  opacity:0;animation:au .9s .4s forwards
+}
+h1 em{font-style:italic;color:var(--ocre);display:block;font-size:.7em}
+.hero-lead{
+  font-family:var(--serif);font-style:italic;
+  font-size:clamp(.95rem,1.5vw,1.15rem);
+  color:rgba(244,234,216,.55);max-width:480px;line-height:1.95;
+  margin-bottom:3.5rem;
+  opacity:0;animation:au .7s .6s forwards
+}
+.hero-btns{
+  display:flex;gap:1.2rem;flex-wrap:wrap;
+  opacity:0;animation:au .7s .8s forwards
+}
+.btn-wa-lg{
+  display:inline-flex;align-items:center;gap:.55rem;
+  background:#25D366;color:#fff;font-family:var(--sans);font-weight:600;
+  font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;
+  padding:1rem 2.2rem;border-radius:2px;text-decoration:none;
+  box-shadow:0 6px 28px rgba(37,211,102,.28);
+  transition:background .2s,transform .2s,box-shadow .2s
+}
+.btn-wa-lg:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 10px 38px rgba(37,211,102,.38)}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:.5rem;
+  border:1px solid rgba(196,150,32,.35);color:rgba(244,234,216,.75);
+  font-family:var(--sans);font-weight:300;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:1rem 1.8rem;border-radius:2px;text-decoration:none;
+  transition:border-color .2s,color .2s,background .2s
+}
+.btn-outline:hover{border-color:var(--ocre);color:#fff;background:rgba(196,150,32,.08)}
+
+@keyframes au{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* BANDA */
+.banda{background:var(--rojo);padding:.85rem 0;overflow:hidden;white-space:nowrap}
+.banda-track{display:inline-flex;gap:2.5rem;animation:bscroll 20s linear infinite}
+.banda-item{font-family:var(--sans);font-weight:500;font-size:.67rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.88);display:flex;align-items:center;gap:.9rem;flex-shrink:0}
+.banda-item::before{content:'✦';color:rgba(255,255,255,.4);font-size:.48rem}
+@keyframes bscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* SECCIONES */
+section{position:relative;z-index:1}
+.container{max-width:1100px;margin:0 auto;padding:0 3rem}
+.sec-label{font-family:var(--sans);font-weight:500;font-size:.6rem;letter-spacing:.45em;text-transform:uppercase;color:var(--tierra);margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem}
+.sec-label::before{content:'';width:18px;height:1px;background:var(--verde-med);display:inline-block;flex-shrink:0}
+h2.titulo{font-family:var(--display);font-weight:900;font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:.92;color:var(--verde);margin-bottom:1.4rem}
+h2.titulo em{font-style:italic;color:var(--tierra)}
+.bajada{font-family:var(--serif);font-style:italic;font-size:clamp(.9rem,1.4vw,1.1rem);color:rgba(13,10,6,.5);line-height:1.9;max-width:520px}
+
+/* SOBRE */
+#sobre{padding:8rem 0 7rem;background:var(--marfil)}
+.sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.sobre-cita{
+  font-family:var(--display);font-style:italic;font-size:clamp(1.1rem,2vw,1.55rem);
+  color:var(--verde);line-height:1.5;
+  border-left:3px solid var(--ocre);padding-left:1.8rem;margin:2.5rem 0 2rem
+}
+.sobre-cuerpo{font-size:.86rem;color:rgba(13,10,6,.55);line-height:1.95;margin-bottom:2.2rem}
+.sobre-contacto{display:flex;flex-direction:column;gap:.7rem}
+.sc-item{font-size:.82rem;color:var(--verde);display:flex;align-items:center;gap:.7rem}
+.sc-item a{color:var(--verde);text-decoration:none;font-weight:500;transition:color .2s}
+.sc-item a:hover{color:var(--tierra)}
+
+/* Placeholder foto */
+.foto-placeholder{
+  width:100%;
+  aspect-ratio:3/4;
+  background:var(--crema);
+  border:2px dashed rgba(196,150,32,.3);
+  border-radius:3px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;
+  color:rgba(13,10,6,.25)
+}
+.foto-placeholder-icon{font-size:2.5rem;opacity:.4}
+.foto-placeholder-txt{font-family:var(--sans);font-size:.65rem;letter-spacing:.25em;text-transform:uppercase}
+
+/* MONTERÍAS */
+#monterias{padding:8rem 0;background:var(--verde)}
+#monterias .sec-label{color:rgba(196,150,32,.6)}
+#monterias .sec-label::before{background:rgba(196,150,32,.3)}
+#monterias h2.titulo{color:#fff}
+#monterias h2.titulo em{color:var(--ocre)}
+#monterias .bajada{color:rgba(244,234,216,.45)}
+
+.cal-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;margin-top:4rem;
+  background:rgba(196,150,32,.1);
+  border:1px solid rgba(196,150,32,.1);
+  border-radius:3px;overflow:hidden
+}
+.cal-card{
+  background:#1c3528;padding:2.2rem 2rem;
+  cursor:pointer;position:relative;overflow:hidden;
+  transition:background .3s,transform .2s
+}
+.cal-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--ocre),var(--tierra));
+  transform:scaleX(0);transform-origin:left;transition:transform .4s
+}
+.cal-card:hover{background:rgba(255,255,255,.07);transform:translateY(-3px)}
+.cal-card:hover::before{transform:scaleX(1)}
+.cal-dia{font-family:var(--display);font-weight:700;font-size:1.6rem;color:var(--ocre);line-height:1;margin-bottom:.25rem}
+.cal-mes{font-family:var(--sans);font-weight:500;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(196,150,32,.65);margin-bottom:1.8rem}
+.cal-finca{font-family:var(--display);font-weight:700;font-size:1.1rem;color:#fff;line-height:1.25;margin-bottom:.5rem}
+.cal-loc{font-size:.7rem;color:rgba(244,234,216,.35);letter-spacing:.06em;margin-bottom:1.5rem}
+.cal-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.chip{
+  font-family:var(--sans);font-size:.6rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  padding:.28rem .7rem;border-radius:1px
+}
+.chip-p{background:rgba(196,150,32,.14);color:var(--ocre);border:1px solid rgba(196,150,32,.22)}
+.chip-n{background:rgba(255,255,255,.05);color:rgba(244,234,216,.5);border:1px solid rgba(255,255,255,.07)}
+.cal-cupos{font-size:.68rem;color:rgba(244,234,216,.35);line-height:1.6}
+.cal-ver{
+  display:inline-flex;align-items:center;gap:.4rem;margin-top:1.6rem;
+  font-family:var(--sans);font-weight:600;font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;
+  color:#25D366;border-bottom:1px solid rgba(37,211,102,.25);padding-bottom:.1rem;
+  background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;
+  transition:color .2s,border-color .2s
+}
+.cal-ver:hover{color:#4de085;border-bottom-color:rgba(77,224,133,.45)}
+.badge-nueva{
+  position:absolute;top:1rem;right:1rem;
+  font-family:var(--sans);font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--rojo);color:#fff;padding:.22rem .55rem;border-radius:1px
+}
+
+/* TABLA */
+#tabla{padding:7rem 0;background:var(--crema)}
+.tabla-scroll{margin-top:3.5rem;overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+thead tr{background:var(--verde)}
+thead th{
+  font-family:var(--sans);font-weight:600;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(244,234,216,.65);padding:1rem 1.3rem;text-align:left;
+  border-bottom:2px solid rgba(196,150,32,.4)
+}
+tbody tr{border-bottom:1px solid rgba(13,10,6,.07);transition:background .18s}
+tbody tr:hover{background:rgba(44,80,64,.06)}
+tbody td{padding:.95rem 1.3rem;font-size:.82rem;color:rgba(13,10,6,.72);vertical-align:middle}
+.td-fecha{font-family:var(--display);font-weight:700;font-size:.92rem;color:var(--verde);white-space:nowrap}
+.td-precio{font-family:var(--display);font-weight:700;font-size:1rem;color:var(--tierra)}
+.td-cupos{font-size:.73rem;color:rgba(13,10,6,.45);line-height:1.6}
+.td-prov{font-family:var(--sans);font-size:.73rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--verde-med)}
+.tabla-nota{
+  font-family:var(--serif);font-style:italic;font-size:.76rem;
+  color:rgba(13,10,6,.35);margin-top:1.5rem;line-height:1.8
+}
+
+/* CONTACTO */
+#contacto{padding:8rem 0;background:var(--verde)}
+#contacto .sec-label{color:rgba(196,150,32,.6)}
+#contacto .sec-label::before{background:rgba(196,150,32,.3)}
+#contacto h2.titulo{color:#fff}
+#contacto h2.titulo em{color:var(--ocre)}
+#contacto .bajada{color:rgba(244,234,216,.45)}
+.cont-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;margin-top:4.5rem;align-items:start}
+.cont-bloque{display:flex;flex-direction:column;gap:1.3rem}
+.cont-item{
+  display:flex;align-items:center;gap:1.2rem;
+  padding:1.5rem 1.8rem;background:rgba(255,255,255,.05);
+  border:1px solid rgba(196,150,32,.1);border-radius:2px;
+  transition:background .25s,border-color .25s
+}
+.cont-item:hover{background:rgba(255,255,255,.09);border-color:rgba(196,150,32,.22)}
+.cont-icon{font-size:1.25rem;flex-shrink:0}
+.cont-etiq{font-family:var(--sans);font-weight:600;font-size:.56rem;letter-spacing:.35em;text-transform:uppercase;color:var(--ocre);margin-bottom:.38rem}
+.cont-val{font-family:var(--serif);font-size:.95rem;color:#fff;text-decoration:none;transition:color .2s}
+.cont-val:hover{color:var(--ocre)}
+.cont-col-r{display:flex;flex-direction:column;gap:1.2rem}
+.wa-bloque{
+  display:flex;align-items:center;gap:.7rem;
+  background:#25D366;color:#fff;font-family:var(--sans);font-weight:700;
+  font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;
+  padding:1.3rem 2.2rem;border-radius:2px;text-decoration:none;
+  box-shadow:0 6px 30px rgba(37,211,102,.25);
+  transition:background .2s,transform .2s,box-shadow .2s
+}
+.wa-bloque:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 12px 40px rgba(37,211,102,.35)}
+.wa-bloque svg{flex-shrink:0}
+
+/* FOOTER */
+footer{background:#0a120d;padding:3rem;text-align:center}
+.foot-nombre{font-family:var(--display);font-weight:900;font-size:1.5rem;color:rgba(255,255,255,.12);letter-spacing:.06em;margin-bottom:.45rem}
+.foot-sub{font-family:var(--sans);font-size:.58rem;letter-spacing:.35em;text-transform:uppercase;color:rgba(255,255,255,.1);margin-bottom:1.4rem}
+.foot-datos{font-size:.66rem;color:rgba(255,255,255,.18);line-height:1.85;max-width:600px;margin:0 auto}
+
+/* MODAL */
+.modal-overlay{
+  position:fixed;inset:0;z-index:9000;
+  background:rgba(8,17,11,.92);backdrop-filter:blur(6px);
+  display:none;align-items:center;justify-content:center;padding:1.5rem
+}
+.modal-overlay.open{display:flex}
+.modal-box{
+  background:var(--verde);border:1px solid rgba(196,150,32,.18);border-radius:3px;
+  max-width:460px;width:100%;
+  box-shadow:0 28px 70px rgba(0,0,0,.6);overflow:hidden;
+  animation:mopen .32s cubic-bezier(.34,1.56,.64,1) forwards
+}
+@keyframes mopen{from{opacity:0;transform:scale(.93) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.m-header{background:rgba(0,0,0,.2);padding:2rem 2.2rem;border-bottom:1px solid rgba(196,150,32,.12);position:relative}
+.m-close{
+  position:absolute;top:1rem;right:1rem;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.08);
+  color:rgba(255,255,255,.45);font-size:.8rem;
+  width:28px;height:28px;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,color .2s,border-color .2s
+}
+.m-close:hover{background:var(--rojo);color:#fff;border-color:var(--rojo)}
+.m-fecha{font-family:var(--sans);font-weight:600;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--ocre);margin-bottom:.5rem}
+.m-finca{font-family:var(--display);font-weight:900;font-size:1.8rem;color:#fff;line-height:1;margin-bottom:.38rem}
+.m-loc{font-size:.72rem;color:rgba(244,234,216,.4);letter-spacing:.05em}
+.m-body{padding:2rem 2.2rem;display:flex;flex-direction:column;gap:1rem}
+.m-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem}
+.m-campo{display:flex;flex-direction:column;gap:.35rem}
+.m-campo-etiq{font-family:var(--sans);font-weight:600;font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(196,150,32,.55)}
+.m-campo-val{font-family:var(--display);font-weight:700;font-size:1.35rem;color:var(--ocre)}
+.m-campo-val.grande{font-size:2.2rem}
+.m-campo-val.texto{font-family:var(--sans);font-size:.82rem;color:rgba(244,234,216,.72);font-weight:300;line-height:1.65}
+.m-sep{height:1px;background:rgba(196,150,32,.1)}
+.m-footer{
+  padding:1.5rem 2.2rem;background:rgba(0,0,0,.2);border-top:1px solid rgba(196,150,32,.1);
+  display:flex;align-items:center;justify-content:space-between;gap:1rem
+}
+.m-precio{font-family:var(--display);font-weight:900;font-size:2.4rem;color:var(--ocre);line-height:1}
+.m-precio-sub{font-family:var(--sans);font-size:.58rem;font-weight:300;letter-spacing:.12em;color:rgba(244,234,216,.3);margin-top:.15rem}
+.m-wa{
+  display:inline-flex;align-items:center;gap:.45rem;
+  background:#25D366;color:#fff;font-family:var(--sans);font-weight:700;
+  font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.75rem 1.6rem;border-radius:2px;text-decoration:none;
+  transition:background .2s,transform .15s
+}
+.m-wa:hover{background:#1da851;transform:translateY(-1px)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .cal-grid{grid-template-columns:repeat(2,1fr)}
+  .sobre-grid{grid-template-columns:1fr}
+  .foto-placeholder{aspect-ratio:16/9;max-width:100%}
+  .cont-grid{grid-template-columns:1fr;gap:3rem}
+  .cont-col-r .wa-bloque{width:100%;justify-content:center}
+}
+@media(max-width:640px){
+  /* Nav */
+  nav{padding:.9rem 1.2rem}
+  .nav-tel{display:none}
+  .logo-top{font-size:1.1rem}
+  .logo-bot{display:none}
+  /* Contenedores */
+  .container{padding:0 1.2rem}
+  #sobre,#monterias,#tabla,#contacto{padding:4rem 0}
+  /* Hero */
+  #hero{padding:6rem 0 4rem}
+  .hero-inner{padding:0 1.2rem}
+  h1{font-size:clamp(3.2rem,12vw,5rem);margin-bottom:2rem}
+  .hero-eyebrow{margin-bottom:1.5rem}
+  .hero-lead{font-size:.95rem;margin-bottom:2.5rem}
+  .hero-btns{flex-direction:column;gap:.8rem}
+  .btn-wa-lg,.btn-outline{justify-content:center;width:100%;text-align:center}
+  /* Calendario */
+  .cal-grid{grid-template-columns:1fr}
+  .cal-card{padding:1.6rem 1.4rem}
+  /* Tabla */
+  thead th{padding:.7rem .8rem;font-size:.52rem;letter-spacing:.15em}
+  tbody td{padding:.7rem .8rem;font-size:.76rem}
+  .td-fecha{font-size:.82rem}
+  .td-precio{font-size:.88rem}
+  /* Contacto */
+  .cont-item{padding:1.1rem 1.2rem}
+  .cont-col-r .wa-bloque{width:100%;justify-content:center;padding:1.1rem 1.5rem}
+  /* Modal */
+  .modal-box{max-height:90vh;overflow-y:auto}
+  .m-header{padding:1.5rem}
+  .m-body{padding:1.5rem}
+  .m-footer{padding:1.2rem 1.5rem;flex-wrap:wrap;gap:.8rem}
+  .m-wa{width:100%;justify-content:center}
+  .m-finca{font-size:1.4rem}
+  .m-campo-val.grande{font-size:1.8rem}
+  .m-row{gap:.8rem}
+  /* Footer */
+  footer{padding:2rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<div id="barra"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo-nav">
+    <span class="logo-top">MANCHA IBÉRICA</span>
+    <span class="logo-bot">Servicios Cinegéticos</span>
+  </a>
+  <div class="nav-right">
+    <a href="tel:+34677507492" class="nav-tel">677 507 492 · 606 613 167</a>
+    <a href="https://wa.me/34677507492" target="_blank" class="btn-wa-sm">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.6 8.6 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Consultar
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-linea"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Calendario en abierto 2026 · 2027</div>
+    <h1>MANCHA<br><em>Ibérica</em></h1>
+    <p class="hero-lead">4 escogidas fincas de reconocido prestigio que a buen seguro darán de nuevo resultados sobresalientes.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20las%20monter%C3%ADas%20de%20Mancha%20Ib%C3%A9rica%202026%2F2027" target="_blank" class="btn-wa-lg">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.6 8.6 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escribir por WhatsApp
+      </a>
+      <a href="#monterias" class="btn-outline">Ver calendario</a>
+    </div>
+  </div>
+</section>
+
+<!-- BANDA -->
+<div class="banda" aria-hidden="true">
+  <div class="banda-track">
+    <span class="banda-item">Badajoz</span>
+    <span class="banda-item">Cáceres</span>
+    <span class="banda-item">Venados</span>
+    <span class="banda-item">Gamos</span>
+    <span class="banda-item">Hembras</span>
+    <span class="banda-item">Jabalíes</span>
+    <span class="banda-item">Fincas de prestigio</span>
+    <span class="banda-item">Resultados sobresalientes</span>
+    <span class="banda-item">Badajoz</span>
+    <span class="banda-item">Cáceres</span>
+    <span class="banda-item">Venados</span>
+    <span class="banda-item">Gamos</span>
+    <span class="banda-item">Hembras</span>
+    <span class="banda-item">Jabalíes</span>
+    <span class="banda-item">Fincas de prestigio</span>
+    <span class="banda-item">Resultados sobresalientes</span>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div>
+        <div class="sec-label">La organica</div>
+        <h2 class="titulo">Mancha <em>Ibérica</em></h2>
+        <blockquote class="sobre-cita">"Cuatro monterías de las que tres ya las dieron el pasado año, con resultados sobresalientes."</blockquote>
+        <p class="sobre-cuerpo">Mancha Ibérica Servicios Cinegéticos presenta su programa de monterías en abierto con 4 escogidas fincas de reconocido prestigio. La nueva incorporación al calendario es Las Mengachas (Alcuéscar, Cáceres), una de las monterías cochineras en abierto más famosas y laureadas de la venatoria española.</p>
+        <div class="sobre-contacto">
+          <div class="sc-item">📧 <a href="mailto:manchaiberica@gmail.com">manchaiberica@gmail.com</a></div>
+          <div class="sc-item">📞 <a href="tel:+34677507492">677 507 492</a> · <a href="tel:+34606613167">606 613 167</a></div>
+        </div>
+      </div>
+      <div class="foto-placeholder">
+        <div class="foto-placeholder-icon">📷</div>
+        <div class="foto-placeholder-txt">Foto a añadir</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MONTERÍAS -->
+<section id="monterias">
+  <div class="container">
+    <div class="sec-label">Calendario 2026 · 2027</div>
+    <h2 class="titulo">Monterías<br>en <em>Abierto</em></h2>
+    <p class="bajada">Cuatro fincas en Badajoz y Cáceres. Libre de venados, gamos, hembras y jabalíes.</p>
+
+    <div class="cal-grid">
+
+      <div class="cal-card" onclick="openModal('m1')">
+        <div class="cal-dia">10</div>
+        <div class="cal-mes">Octubre 2026</div>
+        <div class="cal-finca">La Lancha y Cimero</div>
+        <div class="cal-loc">Herrera del Duque · Badajoz</div>
+        <div class="cal-chips">
+          <span class="chip chip-p">850 €</span>
+          <span class="chip chip-n">35 puestos</span>
+        </div>
+        <div class="cal-cupos">Libre de venados, gamos,<br>hembras y jabalíes</div>
+        <button class="cal-ver" onclick="event.stopPropagation();openModal('m1')">Ver detalles →</button>
+      </div>
+
+      <div class="cal-card" onclick="openModal('m2')">
+        <div class="cal-dia">28</div>
+        <div class="cal-mes">Noviembre 2026</div>
+        <div class="cal-finca">La Lancha Sierra y Costeras</div>
+        <div class="cal-loc">Herrera del Duque · Badajoz</div>
+        <div class="cal-chips">
+          <span class="chip chip-p">1.000 €</span>
+          <span class="chip chip-n">40 puestos</span>
+        </div>
+        <div class="cal-cupos">Libre de venados, gamos,<br>hembras y jabalíes</div>
+        <button class="cal-ver" onclick="event.stopPropagation();openModal('m2')">Ver detalles →</button>
+      </div>
+
+      <div class="cal-card" onclick="openModal('m3')">
+        <div class="cal-dia">10</div>
+        <div class="cal-mes">Enero 2027</div>
+        <div class="cal-finca">Hoya Mortero</div>
+        <div class="cal-loc">La Calera · Cáceres</div>
+        <div class="cal-chips">
+          <span class="chip chip-p">450 €</span>
+          <span class="chip chip-n">45 puestos</span>
+        </div>
+        <div class="cal-cupos">Libre de venados,<br>ciervos y jabalíes</div>
+        <button class="cal-ver" onclick="event.stopPropagation();openModal('m3')">Ver detalles →</button>
+      </div>
+
+      <div class="cal-card" onclick="openModal('m4')">
+        <div class="badge-nueva">NUEVA</div>
+        <div class="cal-dia">23</div>
+        <div class="cal-mes">Enero 2027</div>
+        <div class="cal-finca">Las Mengachas</div>
+        <div class="cal-loc">Alcuéscar · Cáceres</div>
+        <div class="cal-chips">
+          <span class="chip chip-p">380 €</span>
+          <span class="chip chip-n">70 puestos</span>
+        </div>
+        <div class="cal-cupos">Cupo libre · espectativas<br>de 65/70 jabalíes</div>
+        <button class="cal-ver" onclick="event.stopPropagation();openModal('m4')">Ver detalles →</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TABLA -->
+<section id="tabla">
+  <div class="container">
+    <div class="sec-label">Resumen</div>
+    <h2 class="titulo">Calendario <em>completo</em></h2>
+    <div class="tabla-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Finca</th>
+            <th>Precio (€)</th>
+            <th>Puestos</th>
+            <th>Localidad</th>
+            <th>Cupos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-fecha">10/10/2026</td>
+            <td><strong>La Lancha y Cimero</strong></td>
+            <td class="td-precio">850 €</td>
+            <td>35</td>
+            <td><span class="td-prov">Herrera del Duque</span><br><small style="color:rgba(13,10,6,.38);font-size:.68rem">Badajoz</small></td>
+            <td class="td-cupos">Libre de venados, gamos,<br>hembras y jabalíes</td>
+          </tr>
+          <tr>
+            <td class="td-fecha">28/11/2026</td>
+            <td><strong>La Lancha Sierra y Costeras</strong></td>
+            <td class="td-precio">1.000 €</td>
+            <td>40</td>
+            <td><span class="td-prov">Herrera del Duque</span><br><small style="color:rgba(13,10,6,.38);font-size:.68rem">Badajoz</small></td>
+            <td class="td-cupos">Libre de venados, gamos,<br>hembras y jabalíes</td>
+          </tr>
+          <tr>
+            <td class="td-fecha">10/01/2027</td>
+            <td><strong>Hoya Mortero</strong></td>
+            <td class="td-precio">450 €</td>
+            <td>45</td>
+            <td><span class="td-prov">La Calera</span><br><small style="color:rgba(13,10,6,.38);font-size:.68rem">Cáceres</small></td>
+            <td class="td-cupos">Libre de venados,<br>ciervos y jabalíes</td>
+          </tr>
+          <tr>
+            <td class="td-fecha">23/01/2027</td>
+            <td>
+              <strong>Las Mengachas</strong>
+              <span style="background:var(--rojo);color:#fff;font-size:.52rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.18rem .45rem;border-radius:1px;margin-left:.5rem;vertical-align:middle">NUEVA</span>
+            </td>
+            <td class="td-precio">380 €</td>
+            <td>70</td>
+            <td><span class="td-prov">Alcuéscar</span><br><small style="color:rgba(13,10,6,.38);font-size:.68rem">Cáceres</small></td>
+            <td class="td-cupos">Cupo libre · espectativas<br>de 65/70 jabalíes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tabla-nota">* La organización se reserva el derecho a cambiar de fecha cualquiera de las monterías, si lo estima conveniente para el mejor desarrollo de la misma.</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="container">
+    <div class="sec-label">Información y reservas</div>
+    <h2 class="titulo">Reserva tu <em>puesto</em></h2>
+    <p class="bajada">Plazas limitadas. Contacta directamente para confirmar disponibilidad.</p>
+    <div class="cont-grid">
+      <div class="cont-bloque">
+        <div class="cont-item">
+          <span class="cont-icon">📧</span>
+          <div>
+            <div class="cont-etiq">Correo</div>
+            <a href="mailto:manchaiberica@gmail.com" class="cont-val">manchaiberica@gmail.com</a>
+          </div>
+        </div>
+        <div class="cont-item">
+          <span class="cont-icon">📞</span>
+          <div>
+            <div class="cont-etiq">Teléfono · WhatsApp</div>
+            <a href="tel:+34677507492" class="cont-val">677 507 492</a>
+          </div>
+        </div>
+        <div class="cont-item">
+          <span class="cont-icon">📞</span>
+          <div>
+            <div class="cont-etiq">Teléfono · WhatsApp</div>
+            <a href="tel:+34606613167" class="cont-val">606 613 167</a>
+          </div>
+        </div>
+      </div>
+      <div class="cont-col-r">
+        <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20las%20monter%C3%ADas%20de%20Mancha%20Ib%C3%A9rica%202026%2F2027" target="_blank" class="wa-bloque">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.6 8.6 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp · 677 507 492
+        </a>
+        <a href="https://wa.me/34606613167?text=Hola%2C%20me%20interesa%20informaci%C3%B3n%20sobre%20las%20monter%C3%ADas%20de%20Mancha%20Ib%C3%A9rica%202026%2F2027" target="_blank" class="wa-bloque" style="background:rgba(37,211,102,.75)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a8.6 8.6 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp · 606 613 167
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-nombre">MANCHA IBÉRICA</div>
+  <div class="foot-sub">Servicios Cinegéticos</div>
+  <p class="foot-datos">manchaiberica@gmail.com · 677 507 492 · 606 613 167<br>La organización se reserva el derecho a cambiar de fecha cualquiera de las monterías, si lo estima conveniente para el mejor desarrollo de la misma.</p>
+</footer>
+
+<!-- MODALS -->
+
+<div class="modal-overlay" id="m1">
+  <div class="modal-box">
+    <div class="m-header">
+      <button class="m-close" onclick="closeModal('m1')">✕</button>
+      <div class="m-fecha">10 · 10 · 2026</div>
+      <div class="m-finca">La Lancha y Cimero</div>
+      <div class="m-loc">Herrera del Duque · Badajoz</div>
+    </div>
+    <div class="m-body">
+      <div class="m-row">
+        <div class="m-campo">
+          <div class="m-campo-etiq">Precio por puesto</div>
+          <div class="m-campo-val grande">850 €</div>
+        </div>
+        <div class="m-campo">
+          <div class="m-campo-etiq">Puestos</div>
+          <div class="m-campo-val grande">35</div>
+        </div>
+      </div>
+      <div class="m-sep"></div>
+      <div class="m-campo">
+        <div class="m-campo-etiq">Cupos</div>
+        <div class="m-campo-val texto">Libre de venados, gamos, hembras y jabalíes</div>
+      </div>
+    </div>
+    <div class="m-footer">
+      <div><div class="m-precio">850 €</div><div class="m-precio-sub">por puesto</div></div>
+      <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20la%20monter%C3%ADa%20La%20Lancha%20y%20Cimero%20(10%20oct%202026)" target="_blank" class="m-wa">💬 Reservar</a>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="m2">
+  <div class="modal-box">
+    <div class="m-header">
+      <button class="m-close" onclick="closeModal('m2')">✕</button>
+      <div class="m-fecha">28 · 11 · 2026</div>
+      <div class="m-finca">La Lancha Sierra y Costeras</div>
+      <div class="m-loc">Herrera del Duque · Badajoz</div>
+    </div>
+    <div class="m-body">
+      <div class="m-row">
+        <div class="m-campo">
+          <div class="m-campo-etiq">Precio por puesto</div>
+          <div class="m-campo-val grande">1.000 €</div>
+        </div>
+        <div class="m-campo">
+          <div class="m-campo-etiq">Puestos</div>
+          <div class="m-campo-val grande">40</div>
+        </div>
+      </div>
+      <div class="m-sep"></div>
+      <div class="m-campo">
+        <div class="m-campo-etiq">Cupos</div>
+        <div class="m-campo-val texto">Libre de venados, gamos, hembras y jabalíes</div>
+      </div>
+    </div>
+    <div class="m-footer">
+      <div><div class="m-precio">1.000 €</div><div class="m-precio-sub">por puesto</div></div>
+      <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20la%20monter%C3%ADa%20La%20Lancha%20Sierra%20y%20Costeras%20(28%20nov%202026)" target="_blank" class="m-wa">💬 Reservar</a>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="m3">
+  <div class="modal-box">
+    <div class="m-header">
+      <button class="m-close" onclick="closeModal('m3')">✕</button>
+      <div class="m-fecha">10 · 01 · 2027</div>
+      <div class="m-finca">Hoya Mortero</div>
+      <div class="m-loc">La Calera · Cáceres</div>
+    </div>
+    <div class="m-body">
+      <div class="m-row">
+        <div class="m-campo">
+          <div class="m-campo-etiq">Precio por puesto</div>
+          <div class="m-campo-val grande">450 €</div>
+        </div>
+        <div class="m-campo">
+          <div class="m-campo-etiq">Puestos</div>
+          <div class="m-campo-val grande">45</div>
+        </div>
+      </div>
+      <div class="m-sep"></div>
+      <div class="m-campo">
+        <div class="m-campo-etiq">Cupos</div>
+        <div class="m-campo-val texto">Libre de venados, ciervos y jabalíes</div>
+      </div>
+    </div>
+    <div class="m-footer">
+      <div><div class="m-precio">450 €</div><div class="m-precio-sub">por puesto</div></div>
+      <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20la%20monter%C3%ADa%20Hoya%20Mortero%20(10%20ene%202027)" target="_blank" class="m-wa">💬 Reservar</a>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="m4">
+  <div class="modal-box">
+    <div class="m-header">
+      <button class="m-close" onclick="closeModal('m4')">✕</button>
+      <div class="m-fecha">23 · 01 · 2027</div>
+      <div class="m-finca">Las Mengachas</div>
+      <div class="m-loc">Alcuéscar · Cáceres</div>
+    </div>
+    <div class="m-body">
+      <div class="m-row">
+        <div class="m-campo">
+          <div class="m-campo-etiq">Precio por puesto</div>
+          <div class="m-campo-val grande">380 €</div>
+        </div>
+        <div class="m-campo">
+          <div class="m-campo-etiq">Puestos</div>
+          <div class="m-campo-val grande">70</div>
+        </div>
+      </div>
+      <div class="m-sep"></div>
+      <div class="m-campo">
+        <div class="m-campo-etiq">Cupos</div>
+        <div class="m-campo-val texto">Cupo libre · espectativas de 65/70 jabalíes</div>
+      </div>
+      <div class="m-sep"></div>
+      <div class="m-campo">
+        <div class="m-campo-etiq">Nota</div>
+        <div class="m-campo-val texto">Una de las monterías cochineras en abierto más famosas y laureadas de la venatoria española. Nueva incorporación al calendario de Mancha Ibérica.</div>
+      </div>
+    </div>
+    <div class="m-footer">
+      <div><div class="m-precio">380 €</div><div class="m-precio-sub">por puesto</div></div>
+      <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20la%20monter%C3%ADa%20Las%20Mengachas%20(23%20ene%202027)" target="_blank" class="m-wa">💬 Reservar</a>
+    </div>
+  </div>
+</div>
+
+<script>
+window.addEventListener('scroll',function(){
+  var s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('barra').style.width=(s/h*100)+'%';
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>60)
+})
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('.modal-overlay').forEach(function(el){
+  el.addEventListener('click',function(e){if(e.target===el)closeModal(el.id)})
+})
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(function(el){closeModal(el.id)})
+})
+</script>
+</body>
+</html>
