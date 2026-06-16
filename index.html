@@ -167,26 +167,24 @@ td{padding:.9rem 1.2rem;font-size:.82rem;vertical-align:top}
 .galeria-dot.on{background:var(--ocre);transform:scale(1.5)}
 /* ── RESPONSIVE MÓVIL ── */
 @media(max-width:900px){
-  /* NAVEGACIÓN */
+  /* NAV */
   nav{padding:.9rem 1.2rem;gap:.6rem}
   .logo-top{font-size:1rem}
   .nav-tel{display:none}
   .btn-wa-sm{font-size:.58rem;padding:.35rem .7rem}
 
   /* HERO */
-  .hero-inner{padding:0 1.2rem 0 1.2rem}
+  .hero-inner{padding:0 1.2rem}
   h1{font-size:clamp(2.8rem,12vw,5rem)}
   .hero-lead{font-size:.85rem;max-width:100%}
-  .hero-btns{gap:.7rem}
-  .btn-wa-lg,.btn-outline{font-size:.7rem;padding:.75rem 1.3rem}
   .hero-linea{display:none}
 
-  /* SECCIÓN SOBRE */
+  /* SOBRE */
   .sobre-grid{grid-template-columns:1fr;gap:2.5rem}
   .foto-organica{aspect-ratio:16/9;max-height:300px}
   .foto-placeholder{aspect-ratio:16/9}
 
-  /* CALENDARIO — 2 columnas */
+  /* CALENDARIO */
   .cal-grid{grid-template-columns:repeat(2,1fr)}
   .cal-card{padding:1.5rem 1.2rem}
   .cal-finca{font-size:.92rem}
@@ -205,85 +203,102 @@ td{padding:.9rem 1.2rem;font-size:.82rem;vertical-align:top}
 }
 
 @media(max-width:600px){
-  /* NAVEGACIÓN */
-  nav{padding:.8rem 1rem}
-  .logo-top{font-size:.9rem}
-  .logo-bot{font-size:.42rem}
-  .nav-social{gap:.4rem}
-  .nav-social svg{width:16px;height:16px}
-  .btn-wa-sm{font-size:.55rem;padding:.3rem .6rem;gap:.25rem}
+  /* NAV */
+  nav{padding:.75rem .9rem;gap:.4rem}
+  .logo-top{font-size:.88rem}
+  .logo-bot{font-size:.4rem;letter-spacing:.25em}
+  .nav-social{gap:.35rem}
+  .nav-social svg{width:15px;height:15px}
+  .btn-wa-sm{font-size:.52rem;padding:.28rem .55rem;gap:.2rem}
 
   /* GENERAL */
   .container{padding:0 1rem}
-  .sec-label{font-size:.52rem}
+  .sec-label{font-size:.5rem;letter-spacing:.35em}
   h2.titulo{font-size:clamp(1.6rem,8vw,2.8rem)}
   .bajada{font-size:.82rem}
 
   /* HERO */
-  #hero{padding:7rem 0 4rem}
+  #hero{padding:6.5rem 0 3.5rem}
   .hero-inner{padding:0 1rem}
-  h1{font-size:clamp(2.4rem,14vw,4rem);line-height:.9}
-  .hero-eyebrow{font-size:.55rem;letter-spacing:.35em;margin-bottom:1.2rem}
-  .hero-lead{font-size:.82rem;margin-bottom:2rem}
-  .hero-btns{flex-direction:column;gap:.6rem}
-  .btn-wa-lg,.btn-outline{width:100%;justify-content:center;font-size:.72rem}
+  h1{font-size:clamp(2.2rem,13vw,3.8rem);line-height:.9}
+  .hero-eyebrow{font-size:.52rem;letter-spacing:.3em;margin-bottom:1rem}
+  .hero-lead{font-size:.8rem;margin-bottom:1.8rem}
+  .hero-btns{flex-direction:column;gap:.55rem}
+  .btn-wa-lg,.btn-outline{width:100%;justify-content:center;font-size:.7rem;padding:.85rem 1.2rem}
 
-  /* SECCIONES */
-  #sobre{padding:4rem 0}
-  #monterias{padding:4rem 0}
-  #tabla{padding:3.5rem 0}
-  #contacto{padding:4rem 0}
-  #album{padding:4rem 0 3rem}
-  #prensa{padding:4rem 0}
+  /* SECCIONES — padding reducido */
+  #sobre{padding:3.5rem 0}
+  #monterias{padding:3.5rem 0}
+  #tabla{padding:3rem 0}
+  #contacto{padding:3.5rem 0}
+  #album{padding:3.5rem 0 2.5rem}
+  #prensa{padding:3.5rem 0}
+  #fotos{padding:3.5rem 0 2.5rem!important}
 
   /* SOBRE */
-  .sobre-cita{font-size:.9rem;padding-left:1.1rem}
-  .sobre-cuerpo{font-size:.8rem}
+  .sobre-cita{font-size:.88rem;padding-left:1rem;margin:1.5rem 0 1.2rem}
+  .sobre-cuerpo{font-size:.79rem}
 
   /* CALENDARIO — 1 columna */
   .cal-grid{grid-template-columns:1fr;gap:1px}
-  .cal-card{padding:1.4rem 1.2rem}
-  .cal-dia{font-size:1.3rem}
-  .cal-finca{font-size:1rem}
-  .cal-mes{font-size:.65rem}
+  .cal-card{padding:1.2rem 1rem}
+  .cal-dia{font-size:1.25rem}
+  .cal-finca{font-size:.95rem}
+  .cal-mes{font-size:.62rem}
+  .cal-cupos{font-size:.75rem}
 
   /* TABLA */
-  .tabla-scroll{margin-top:1.5rem}
+  .tabla-scroll{margin-top:1.2rem}
+  td{padding:.75rem .9rem;font-size:.78rem}
+  th{padding:.75rem .9rem;font-size:.56rem}
 
   /* CONTACTO */
-  .cont-grid{gap:2rem;margin-top:2rem}
-  .wa-bloque{font-size:.75rem;padding:.85rem 1rem}
+  .cont-grid{gap:1.8rem;margin-top:2rem}
+  .wa-bloque{font-size:.72rem;padding:.8rem .9rem}
+  .cont-val{font-size:.82rem}
 
   /* GALERÍA */
-  #album .sec-label{font-size:.52rem}
-  .galeria-sub{font-size:.78rem;margin-bottom:2rem}
+  .galeria-sub{font-size:.76rem;margin-bottom:1.6rem}
   .galeria-v,.galeria-h{grid-template-columns:repeat(2,1fr);gap:5px}
-  .galeria-dots{gap:.45rem;margin-top:1.5rem}
+  .galeria-dots{gap:.4rem;margin-top:1.2rem}
+  .galeria-dot{width:6px;height:6px}
 
   /* PRENSA */
   .prensa-art-inner{flex-direction:column}
-  .prensa-cover{width:100%;max-width:180px}
-  .prensa-titulo{font-size:1.1rem}
+  .prensa-cover{width:100%;max-width:160px}
+  .prensa-titulo{font-size:1rem}
+  .prensa-txt{font-size:.79rem}
 
   /* MODALES */
-  .modal-overlay{padding:.8rem}
-  .m-header{padding:1.4rem 1.2rem 1rem}
-  .m-finca{font-size:1.25rem}
-  .m-body{padding:1rem 1.2rem}
-  .m-row{flex-direction:column;gap:.7rem}
-  .m-footer{padding:.8rem 1.2rem 1.2rem}
-  .m-campo-val.grande{font-size:1.6rem}
+  .modal-overlay{padding:.6rem}
+  .m-header{padding:1.2rem 1rem .9rem}
+  .m-finca{font-size:1.15rem}
+  .m-body{padding:.9rem 1rem}
+  .m-row{flex-direction:column;gap:.6rem}
+  .m-footer{padding:.7rem 1rem 1rem}
+  .m-campo-val.grande{font-size:1.5rem}
 
   /* FOOTER */
-  footer{padding:2rem 1rem}
-  .foot-nombre{font-size:1.1rem}
+  footer{padding:1.8rem 1rem}
+  .foot-nombre{font-size:1rem}
+  .foot-datos{font-size:.65rem}
 }
 
 @media(max-width:420px){
-  /* GALERÍA — 1 columna en pantallas muy pequeñas */
-  .galeria-v,.galeria-h{grid-template-columns:1fr}
-}
+  /* NAV muy pequeña */
+  .logo-bot{display:none}
+  .nav-social{display:none}
+  .btn-wa-sm{font-size:.5rem;padding:.25rem .5rem}
 
+  /* GALERÍA — 1 columna */
+  .galeria-v,.galeria-h{grid-template-columns:1fr;gap:6px}
+
+  /* HERO */
+  h1{font-size:clamp(2rem,15vw,3.2rem)}
+
+  /* CALENDARIO */
+  .cal-ver{font-size:.55rem}
+}
 /* ── MODALES ── */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:1000;align-items:center;justify-content:center;padding:1.5rem}
 .modal-overlay.open{display:flex}
