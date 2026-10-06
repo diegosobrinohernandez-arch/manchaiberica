@@ -952,17 +952,6 @@ section[id]{scroll-margin-top:68px}
 
     <div class="cal-grid">
 
-      <div class="cal-card" onclick="openModal('m1')">
-        <div class="cal-dia">10</div>
-        <div class="cal-mes" data-i18n="mes_oct">Octubre 2026</div>
-        <div class="cal-finca">La Lancha y Cimero</div>
-        <div class="cal-loc">Herrera del Duque · Badajoz</div>
-        <div class="cal-chips">          <span class="chip chip-n">35 puestos</span>
-        </div>
-        <div class="cal-cupos"><span data-i18n="cupos_vgh">Libre de venados, gamos,<br>hembras y jabalíes</span></div>
-        <button class="cal-ver" onclick="event.stopPropagation();openModal('m1')"><span data-i18n="ver_det">Ver detalles →</span></button>
-      </div>
-
       <div class="cal-card" onclick="openModal('m5')">
         <div class="cal-dia">29</div>
         <div class="cal-mes" data-i18n="mes_oct">Octubre 2026</div>
@@ -970,19 +959,8 @@ section[id]{scroll-margin-top:68px}
         <div class="cal-loc">Puerto Lápice · Ciudad Real</div>
         <div class="cal-chips">          <span class="chip chip-n">40 puestos</span>
         </div>
-        <div class="cal-cupos"><span data-i18n="cupos_vj2h">Libre de venados, jabalíes<br>y 2 hembras</span></div>
+        <div class="cal-cupos"><span data-i18n="cupos_vj2h">Libre de venados, jabalíes<br>y 1 hembra</span></div>
         <button class="cal-ver" onclick="event.stopPropagation();openModal('m5')"><span data-i18n="ver_det">Ver detalles →</span></button>
-      </div>
-
-      <div class="cal-card" onclick="openModal('m2')">
-        <div class="cal-dia">28</div>
-        <div class="cal-mes" data-i18n="mes_nov">Noviembre 2026</div>
-        <div class="cal-finca">La Lancha Sierra y Costeras</div>
-        <div class="cal-loc">Herrera del Duque · Badajoz</div>
-        <div class="cal-chips">          <span class="chip chip-n">40 puestos</span>
-        </div>
-        <div class="cal-cupos"><span data-i18n="cupos_vgh">Libre de venados, gamos,<br>hembras y jabalíes</span></div>
-        <button class="cal-ver" onclick="event.stopPropagation();openModal('m2')"><span data-i18n="ver_det">Ver detalles →</span></button>
       </div>
 
       <div class="cal-card cal-vendida" onclick="openModal('m6')">
@@ -1012,7 +990,7 @@ section[id]{scroll-margin-top:68px}
 
 
       <div class="cal-card" onclick="openModal('m3')">
-        <div class="cal-dia">10</div>
+        <div class="cal-dia">9</div>
         <div class="cal-mes" data-i18n="mes_ene">Enero 2027</div>
         <div class="cal-finca">Hoya Mortero</div>
         <div class="cal-loc">La Calera · Cáceres</div>
@@ -1055,22 +1033,10 @@ section[id]{scroll-margin-top:68px}
         </thead>
         <tbody>
           <tr>
-            <td class="td-fecha">10/10/2026</td>
-            <td><strong>La Lancha y Cimero</strong></td>            <td>35</td>
-            <td><span class="td-prov">Herrera del Duque</span><br><small style="color:rgba(13,10,6,.38);font-size:.68rem">Badajoz</small></td>
-            <td class="td-cupos"><span data-i18n="cupos_vgh">Libre de venados, gamos,<br>hembras y jabalíes</span></td>
-          </tr>
-          <tr>
             <td class="td-fecha">29/10/2026</td>
             <td><strong>La Toledana</strong></td>            <td>40</td>
             <td><span class="td-prov">Puerto Lápice</span><br><small style="color:rgba(13,10,6,.38);font-size:.68rem">Ciudad Real</small></td>
-            <td class="td-cupos"><span data-i18n="cupos_vj2h">Libre de venados, jabalíes<br>y 2 hembras</span></td>
-          </tr>
-          <tr>
-            <td class="td-fecha">28/11/2026</td>
-            <td><strong>La Lancha Sierra y Costeras</strong></td>            <td>40</td>
-            <td><span class="td-prov">Herrera del Duque</span><br><small style="color:rgba(13,10,6,.38);font-size:.68rem">Badajoz</small></td>
-            <td class="td-cupos"><span data-i18n="cupos_vgh">Libre de venados, gamos,<br>hembras y jabalíes</span></td>
+            <td class="td-cupos"><span data-i18n="cupos_vj2h">Libre de venados, jabalíes<br>y 1 hembra</span></td>
           </tr>
           <tr style="background:rgba(184,8,30,.05)">
             <td class="td-fecha">10/12/2026</td>
@@ -1091,7 +1057,7 @@ section[id]{scroll-margin-top:68px}
             <td class="td-cupos"><span data-i18n="cupos_2mj">2 muflones, jabalíes<br>y hembras libres</span></td>
           </tr>
           <tr>
-            <td class="td-fecha">10/01/2027</td>
+            <td class="td-fecha">09/01/2027</td>
             <td><strong>Hoya Mortero</strong></td>            <td>45</td>
             <td><span class="td-prov">La Calera</span><br><small style="color:rgba(13,10,6,.38);font-size:.68rem">Cáceres</small></td>
             <td class="td-cupos"><span data-i18n="cupos_vcj">Libre de venados,<br>ciervos y jabalíes</span></td>
@@ -1287,61 +1253,11 @@ section[id]{scroll-margin-top:68px}
 
 <!-- MODALS -->
 
-<div class="modal-overlay" id="m1">
-  <div class="modal-box">
-    <div class="m-header">
-      <button class="m-close" onclick="closeModal('m1')">✕</button>
-      <div class="m-fecha">10 · 10 · 2026</div>
-      <div class="m-finca">La Lancha y Cimero</div>
-      <div class="m-loc">Herrera del Duque · Badajoz</div>
-    </div>
-    <div class="m-body">
-      <div class="m-row">        <div class="m-campo">
-          <div class="m-campo-etiq" data-i18n="m_puestos">Puestos</div>
-          <div class="m-campo-val grande">35</div>
-        </div>
-      </div>
-      <div class="m-sep"></div>
-      <div class="m-campo">
-        <div class="m-campo-etiq" data-i18n="m_cupos">Cupos</div>
-        <div class="m-campo-val texto" data-i18n="m_cupos_vgh">Libre de venados, gamos, hembras y jabalíes</div>
-      </div>
-    </div>
-    <div class="m-footer">      <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20la%20monter%C3%ADa%20La%20Lancha%20y%20Cimero%20(10%20oct%202026)" target="_blank" class="m-wa"><span data-i18n="m_wa_reservar">💬 Reservar</span></a>
-    </div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="m2">
-  <div class="modal-box">
-    <div class="m-header">
-      <button class="m-close" onclick="closeModal('m2')">✕</button>
-      <div class="m-fecha">28 · 11 · 2026</div>
-      <div class="m-finca">La Lancha Sierra y Costeras</div>
-      <div class="m-loc">Herrera del Duque · Badajoz</div>
-    </div>
-    <div class="m-body">
-      <div class="m-row">        <div class="m-campo">
-          <div class="m-campo-etiq" data-i18n="m_puestos">Puestos</div>
-          <div class="m-campo-val grande">40</div>
-        </div>
-      </div>
-      <div class="m-sep"></div>
-      <div class="m-campo">
-        <div class="m-campo-etiq" data-i18n="m_cupos">Cupos</div>
-        <div class="m-campo-val texto" data-i18n="m_cupos_vgh">Libre de venados, gamos, hembras y jabalíes</div>
-      </div>
-    </div>
-    <div class="m-footer">      <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20la%20monter%C3%ADa%20La%20Lancha%20Sierra%20y%20Costeras%20(28%20nov%202026)" target="_blank" class="m-wa"><span data-i18n="m_wa_reservar">💬 Reservar</span></a>
-    </div>
-  </div>
-</div>
-
 <div class="modal-overlay" id="m3">
   <div class="modal-box">
     <div class="m-header">
       <button class="m-close" onclick="closeModal('m3')">✕</button>
-      <div class="m-fecha">10 · 01 · 2027</div>
+      <div class="m-fecha">9 · 01 · 2027</div>
       <div class="m-finca">Hoya Mortero</div>
       <div class="m-loc">La Calera · Cáceres</div>
     </div>
@@ -1357,7 +1273,7 @@ section[id]{scroll-margin-top:68px}
         <div class="m-campo-val texto" data-i18n="m_cupos_vcj">Libre de venados, ciervos y jabalíes</div>
       </div>
     </div>
-    <div class="m-footer">      <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20la%20monter%C3%ADa%20Hoya%20Mortero%20(10%20ene%202027)" target="_blank" class="m-wa"><span data-i18n="m_wa_reservar">💬 Reservar</span></a>
+    <div class="m-footer">      <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20la%20monter%C3%ADa%20Hoya%20Mortero%20(9%20ene%202027)" target="_blank" class="m-wa"><span data-i18n="m_wa_reservar">💬 Reservar</span></a>
     </div>
   </div>
 </div>
@@ -1409,7 +1325,7 @@ section[id]{scroll-margin-top:68px}
       <div class="m-sep"></div>
       <div class="m-campo">
         <div class="m-campo-etiq" data-i18n="m_cupos">Cupos</div>
-        <div class="m-campo-val texto" data-i18n="m_cupos_vj2h">Libre de venados, jabalíes y 2 hembras</div>
+        <div class="m-campo-val texto" data-i18n="m_cupos_vj2h">Libre de venados, jabalíes y 1 hembra</div>
       </div>
     </div>
     <div class="m-footer">      <a href="https://wa.me/34677507492?text=Hola%2C%20me%20interesa%20la%20monter%C3%ADa%20La%20Toledana%20(29%20oct%202026)" target="_blank" class="m-wa"><span data-i18n="m_wa_reservar">💬 Reservar</span></a>
@@ -1528,7 +1444,7 @@ initGaleria('wrap-v', 'dots-v');   /* galería vertical   — #fotos   */
 </script>
 
 <script>
-var T={es:{page_title:'Mancha Ibérica — Servicios Cinegéticos · Monterías 2026/2027',meta_desc:'Mancha Ibérica Servicios Cinegéticos. Calendario de monterías en abierto 2026/2027.',logo_bot:'Servicios Cinegéticos',nav_consult:'Consultar',hero_eyebrow:'Calendario en abierto 2026 · 2027',hero_lead:'7 fincas escogidas de reconocido prestigio que a buen seguro darán de nuevo resultados sobresalientes.',hero_wa:'Escribir por WhatsApp',hero_cal:'Ver calendario',sobre_label:'La organización',sobre_cita:'“Siete monterías de las que varias ya se dieron el año pasado con resultados sobresalientes”',sobre_body:'Mancha Ibérica Servicios Cinegéticos presenta su programa de monterías en abierto y en cerrado para la temporada 2026/2027, con 7 fincas escogidas de reconocido prestigio entre Badajoz, Ciudad Real, Toledo y Cáceres. La nueva incorporación al calendario es Las Mengachas (Alcuéscar, Cáceres), una de las monterías cochineras en abierto más famosas y laureadas de la venatoria española.',cal_label:'Calendario 2026 · 2027',cal_h2:'Monterías<br>en <em>Abierto</em> y <em>Cerrado</em>',cal_bajada:'Siete fincas en Badajoz, Ciudad Real, Toledo y Cáceres. Monterías en abierto y en cerrado.',badge_nueva:'NUEVA',badge_cerrada:'CERRADA',badge_cerrada_sm:'Cerrada',mes_oct:'Octubre 2026',mes_nov:'Noviembre 2026',mes_dic:'Diciembre 2026',mes_ene:'Enero 2027',cupos_vgh:'Libre de venados, gamos,<br>hembras y jabalíes',cupos_vj2h:'Libre de venados, jabalíes<br>y 2 hembras',cupos_vcj:'Libre de venados,<br>ciervos y jabalíes',cupos_libre:'Cupo libre · espectativas<br>de 65/70 jabalíes',cupos_5j1m:'5 jabalíes, 1 muflón,<br>hembras libres',cupos_2mj:'2 muflones, jabalíes<br>y hembras libres',ver_det:'Ver detalles →',resumen_label:'Resumen',resumen_h2:'Calendario <em>completo</em>',th_fecha:'Fecha',th_finca:'Finca',th_puestos:'Puestos',th_localidad:'Localidad',th_cupos:'Cupos',tabla_nota:'* La organización se reserva el derecho a cambiar de fecha cualquiera de las monterías, si lo estima conveniente para el mejor desarrollo de la misma.',cont_label:'Información y reservas',cont_h2:'Reserva tu <em>puesto</em>',cont_bajada:'Plazas limitadas. Contacta directamente para confirmar disponibilidad.',cont_etiq_email:'Correo',cont_etiq_tel:'Teléfono · WhatsApp',album_label:'Galería',album_h2:'Imágenes',galeria_sub:'Monterías · Mancha Ibérica Servicios Cinegéticos',prensa_label:'Prensa',prensa_h2:'Lances <em>&amp; Ladras</em>',prensa_etiq1:'Lances &amp; Ladras · N.º 8 · Temporada 2025/2026',prensa_titulo1:'Mancha Ibérica ¡Vuelve a Triunfar!',prensa_txt1a:'Mancha Ibérica sabe a lo que juega y nunca baja el nivel. Sin hacer ruido, a su aire y a su manera, todos los años protagoniza unas temporadas brillantes con un calendario corto pero muy atractivo y cumplidor.',prensa_txt1b:'Aaron y Paco, máximos responsables de la organización, son como esos estudiantes responsables y trabajadores que nunca bajan del notable o del sobresaliente. Las dos monterías de La Lancha en abierto, junto con Hoya de Mortero son el ejemplo de lo que significa montar con Mancha Ibérica: disfrute y garantía de éxito.',prensa_link:'Leer artículo completo →',prensa_etiq2:'Lances &amp; Ladras · N.º 16 · Temporada 2024/2025',prensa_titulo2:'Repitiendo Éxitos',prensa_txt2a:'Cazar con Mancha Ibérica da poco margen al error. La trayectoria habla por sí sola, con jornadas muy cuidadas, fincas de reconocido prestigio y una línea de trabajo basada en la regularidad y los buenos resultados.',prensa_txt2b:'Esta temporada, Aarón y Paco volvieron a firmar una campaña muy destacada, consolidando una trayectoria cinegética basada en la constancia, la calidad de las fincas y la satisfacción de los monteros.',fotos_label:'Fotos de Monterías',fotos_h2:'Momentos <em>en el Campo</em>',foot_sub:'Servicios Cinegéticos',foot_datos:'manchaiberica@gmail.com · 677 507 492 · 606 613 167<br>La organización se reserva el derecho a cambiar de fecha cualquiera de las monterías, si lo estima conveniente para el mejor desarrollo de la misma.',m_puestos:'Puestos',m_cupos:'Cupos',m_nota:'Nota',m_cerrado:'Montería en cerrado',m_wa_reservar:'💬 Reservar',m_wa_consultar:'💬 Consultar',m_cupos_vgh:'Libre de venados, gamos, hembras y jabalíes',m_cupos_vj2h:'Libre de venados, jabalíes y 2 hembras',m_cupos_vcj:'Libre de venados, ciervos y jabalíes',m_cupos_libre:'Cupo libre · espectativas de 65/70 jabalíes',m_nota_m4:'Una de las monterías cochineras en abierto más famosas y laureadas de la venatoria española. Nueva incorporación al calendario de Mancha Ibérica.',m_cupos_5j1m:'5 jabalíes, 1 muflón, hembras libres',m_precio:'Precio a consultar.',m_cupos_2mj:'2 muflones, jabalíes y hembras libres',banda:['Badajoz','Cáceres','Venados','Gamos','Hembras','Jabalíes','Fincas de prestigio','Resultados sobresalientes'],nav_nosotros:'Nosotros',nav_monterias:'Monterías',nav_galeria:'Galería',nav_prensa:'Prensa',nav_contacto:'Contacto',vendida:'VENDIDA',m_wa_otras_fechas:'💬 Consultar otras fechas'},en:{page_title:'Mancha Ibérica — Hunting Services · Driven Shoots 2026/2027',meta_desc:'Mancha Ibérica Hunting Services. Open driven shoot programme 2026/2027.',logo_bot:'Hunting Services',nav_consult:'Enquire',hero_eyebrow:'Open Programme 2026 · 2027',hero_lead:'7 carefully selected, highly prestigious estates that are sure to deliver outstanding results once again.',hero_wa:'Message on WhatsApp',hero_cal:'View programme',sobre_label:'The Organisation',sobre_cita:'“Seven drives, several of which took place last season to outstanding effect”',sobre_body:'Mancha Ibérica Hunting Services presents its open and private driven shoot programme for the 2026/2027 season, featuring 7 carefully selected, highly prestigious estates across Badajoz, Ciudad Real, Toledo and Cáceres. The new addition to the programme is Las Mengachas (Alcuéscar, Cáceres), one of the most celebrated open wild boar drives in Spanish game shooting.',cal_label:'Programme 2026 · 2027',cal_h2:'Driven Shoots<br><em>Open</em> &amp; <em>Private</em>',cal_bajada:'Seven estates in Badajoz, Ciudad Real, Toledo and Cáceres. Open and private driven shoots.',badge_nueva:'NEW',badge_cerrada:'PRIVATE',badge_cerrada_sm:'Private',mes_oct:'October 2026',mes_nov:'November 2026',mes_dic:'December 2026',mes_ene:'January 2027',cupos_vgh:'Open: stags, fallow deer,<br>hinds &amp; wild boar',cupos_vj2h:'Open: stags, wild boar<br>&amp; 2 hinds',cupos_vcj:'Open: stags,<br>red deer &amp; wild boar',cupos_libre:'Unlimited quota · expected<br>65–70 wild boar',cupos_5j1m:'5 wild boar, 1 mouflon,<br>hinds free',cupos_2mj:'2 mouflons, wild boar<br>&amp; hinds free',ver_det:'View details →',resumen_label:'Summary',resumen_h2:'Full <em>Programme</em>',th_fecha:'Date',th_finca:'Estate',th_puestos:'Positions',th_localidad:'Location',th_cupos:'Quotas',tabla_nota:'* The organisers reserve the right to change the date of any drive if deemed necessary for the best conduct of the event.',cont_label:'Information &amp; Bookings',cont_h2:'Reserve your <em>position</em>',cont_bajada:'Places are limited. Please contact us directly to confirm availability.',cont_etiq_email:'Email',cont_etiq_tel:'Phone · WhatsApp',album_label:'Gallery',album_h2:'Images',galeria_sub:'Driven Shoots · Mancha Ibérica Hunting Services',prensa_label:'Press',prensa_h2:'Lances <em>&amp; Ladras</em>',prensa_etiq1:'Lances &amp; Ladras · No. 8 · Season 2025/2026',prensa_titulo1:'Mancha Ibérica Triumphs Again!',prensa_txt1a:'Mancha Ibérica knows exactly what it is doing and never drops its standards. Quietly and in its own way, year after year it delivers brilliant seasons — a concise yet highly attractive and dependable programme.',prensa_txt1b:'Aarón and Paco, the driving force behind the organisation, are like those conscientious, hard-working students who never drop below a merit or a distinction. The two La Lancha open drives, together with Hoya de Mortero, perfectly illustrate what shooting with Mancha Ibérica means: pure enjoyment and a guarantee of success.',prensa_link:'Read full article →',prensa_etiq2:'Lances &amp; Ladras · No. 16 · Season 2024/2025',prensa_titulo2:'Repeating Their Successes',prensa_txt2a:'Shooting with Mancha Ibérica leaves little room for disappointment. The track record speaks for itself — meticulously organised days, prestigious estates, and a work ethic built on consistency and outstanding results.',prensa_txt2b:'This season, Aarón and Paco once again delivered an exceptionally distinguished campaign, reinforcing a shooting legacy built on steadfastness, the quality of their estates, and the satisfaction of every gun.',fotos_label:'Shoot Photography',fotos_h2:'Moments <em>in the Field</em>',foot_sub:'Hunting Services',foot_datos:'manchaiberica@gmail.com · 677 507 492 · 606 613 167<br>The organisers reserve the right to change the date of any drive if deemed necessary for the best conduct of the event.',m_puestos:'Positions',m_cupos:'Quotas',m_nota:'Note',m_cerrado:'Private Driven Shoot',m_wa_reservar:'💬 Book',m_wa_consultar:'💬 Enquire',m_cupos_vgh:'Open for stags, fallow deer, hinds and wild boar',m_cupos_vj2h:'Open for stags, wild boar and 2 hinds',m_cupos_vcj:'Open for stags, red deer and wild boar',m_cupos_libre:'Unlimited quota · expectation of 65–70 wild boar',m_nota_m4:'One of the most celebrated open wild boar drives in Spanish game shooting. New addition to the Mancha Ibérica programme.',m_cupos_5j1m:'5 wild boar, 1 mouflon, hinds free',m_precio:'Price on application.',m_cupos_2mj:'2 mouflons, wild boar and hinds free',banda:['Badajoz','Cáceres','Stags','Fallow Deer','Hinds','Wild Boar','Prestigious Estates','Outstanding Results'],nav_nosotros:'About',nav_monterias:'Programme',nav_galeria:'Gallery',nav_prensa:'Press',nav_contacto:'Contact',vendida:'SOLD OUT',m_wa_otras_fechas:'💬 Enquire about other dates'}};
+var T={es:{page_title:'Mancha Ibérica — Servicios Cinegéticos · Monterías 2026/2027',meta_desc:'Mancha Ibérica Servicios Cinegéticos. Calendario de monterías en abierto 2026/2027.',logo_bot:'Servicios Cinegéticos',nav_consult:'Consultar',hero_eyebrow:'Calendario en abierto 2026 · 2027',hero_lead:'7 fincas escogidas de reconocido prestigio que a buen seguro darán de nuevo resultados sobresalientes.',hero_wa:'Escribir por WhatsApp',hero_cal:'Ver calendario',sobre_label:'La organización',sobre_cita:'“Siete monterías de las que varias ya se dieron el año pasado con resultados sobresalientes”',sobre_body:'Mancha Ibérica Servicios Cinegéticos presenta su programa de monterías en abierto y en cerrado para la temporada 2026/2027, con 7 fincas escogidas de reconocido prestigio entre Badajoz, Ciudad Real, Toledo y Cáceres. La nueva incorporación al calendario es Las Mengachas (Alcuéscar, Cáceres), una de las monterías cochineras en abierto más famosas y laureadas de la venatoria española.',cal_label:'Calendario 2026 · 2027',cal_h2:'Monterías<br>en <em>Abierto</em> y <em>Cerrado</em>',cal_bajada:'Siete fincas en Badajoz, Ciudad Real, Toledo y Cáceres. Monterías en abierto y en cerrado.',badge_nueva:'NUEVA',badge_cerrada:'CERRADA',badge_cerrada_sm:'Cerrada',mes_oct:'Octubre 2026',mes_nov:'Noviembre 2026',mes_dic:'Diciembre 2026',mes_ene:'Enero 2027',cupos_vgh:'Libre de venados, gamos,<br>hembras y jabalíes',cupos_vj2h:'Libre de venados, jabalíes<br>y 1 hembra',cupos_vcj:'Libre de venados,<br>ciervos y jabalíes',cupos_libre:'Cupo libre · espectativas<br>de 65/70 jabalíes',cupos_5j1m:'5 jabalíes, 1 muflón,<br>hembras libres',cupos_2mj:'2 muflones, jabalíes<br>y hembras libres',ver_det:'Ver detalles →',resumen_label:'Resumen',resumen_h2:'Calendario <em>completo</em>',th_fecha:'Fecha',th_finca:'Finca',th_puestos:'Puestos',th_localidad:'Localidad',th_cupos:'Cupos',tabla_nota:'* La organización se reserva el derecho a cambiar de fecha cualquiera de las monterías, si lo estima conveniente para el mejor desarrollo de la misma.',cont_label:'Información y reservas',cont_h2:'Reserva tu <em>puesto</em>',cont_bajada:'Plazas limitadas. Contacta directamente para confirmar disponibilidad.',cont_etiq_email:'Correo',cont_etiq_tel:'Teléfono · WhatsApp',album_label:'Galería',album_h2:'Imágenes',galeria_sub:'Monterías · Mancha Ibérica Servicios Cinegéticos',prensa_label:'Prensa',prensa_h2:'Lances <em>&amp; Ladras</em>',prensa_etiq1:'Lances &amp; Ladras · N.º 8 · Temporada 2025/2026',prensa_titulo1:'Mancha Ibérica ¡Vuelve a Triunfar!',prensa_txt1a:'Mancha Ibérica sabe a lo que juega y nunca baja el nivel. Sin hacer ruido, a su aire y a su manera, todos los años protagoniza unas temporadas brillantes con un calendario corto pero muy atractivo y cumplidor.',prensa_txt1b:'Aaron y Paco, máximos responsables de la organización, son como esos estudiantes responsables y trabajadores que nunca bajan del notable o del sobresaliente. Las dos monterías de La Lancha en abierto, junto con Hoya de Mortero son el ejemplo de lo que significa montar con Mancha Ibérica: disfrute y garantía de éxito.',prensa_link:'Leer artículo completo →',prensa_etiq2:'Lances &amp; Ladras · N.º 16 · Temporada 2024/2025',prensa_titulo2:'Repitiendo Éxitos',prensa_txt2a:'Cazar con Mancha Ibérica da poco margen al error. La trayectoria habla por sí sola, con jornadas muy cuidadas, fincas de reconocido prestigio y una línea de trabajo basada en la regularidad y los buenos resultados.',prensa_txt2b:'Esta temporada, Aarón y Paco volvieron a firmar una campaña muy destacada, consolidando una trayectoria cinegética basada en la constancia, la calidad de las fincas y la satisfacción de los monteros.',fotos_label:'Fotos de Monterías',fotos_h2:'Momentos <em>en el Campo</em>',foot_sub:'Servicios Cinegéticos',foot_datos:'manchaiberica@gmail.com · 677 507 492 · 606 613 167<br>La organización se reserva el derecho a cambiar de fecha cualquiera de las monterías, si lo estima conveniente para el mejor desarrollo de la misma.',m_puestos:'Puestos',m_cupos:'Cupos',m_nota:'Nota',m_cerrado:'Montería en cerrado',m_wa_reservar:'💬 Reservar',m_wa_consultar:'💬 Consultar',m_cupos_vgh:'Libre de venados, gamos, hembras y jabalíes',m_cupos_vj2h:'Libre de venados, jabalíes y 1 hembra',m_cupos_vcj:'Libre de venados, ciervos y jabalíes',m_cupos_libre:'Cupo libre · espectativas de 65/70 jabalíes',m_nota_m4:'Una de las monterías cochineras en abierto más famosas y laureadas de la venatoria española. Nueva incorporación al calendario de Mancha Ibérica.',m_cupos_5j1m:'5 jabalíes, 1 muflón, hembras libres',m_precio:'Precio a consultar.',m_cupos_2mj:'2 muflones, jabalíes y hembras libres',banda:['Badajoz','Cáceres','Venados','Gamos','Hembras','Jabalíes','Fincas de prestigio','Resultados sobresalientes'],nav_nosotros:'Nosotros',nav_monterias:'Monterías',nav_galeria:'Galería',nav_prensa:'Prensa',nav_contacto:'Contacto',vendida:'VENDIDA',m_wa_otras_fechas:'💬 Consultar otras fechas'},en:{page_title:'Mancha Ibérica — Hunting Services · Driven Shoots 2026/2027',meta_desc:'Mancha Ibérica Hunting Services. Open driven shoot programme 2026/2027.',logo_bot:'Hunting Services',nav_consult:'Enquire',hero_eyebrow:'Open Programme 2026 · 2027',hero_lead:'7 carefully selected, highly prestigious estates that are sure to deliver outstanding results once again.',hero_wa:'Message on WhatsApp',hero_cal:'View programme',sobre_label:'The Organisation',sobre_cita:'“Seven drives, several of which took place last season to outstanding effect”',sobre_body:'Mancha Ibérica Hunting Services presents its open and private driven shoot programme for the 2026/2027 season, featuring 7 carefully selected, highly prestigious estates across Badajoz, Ciudad Real, Toledo and Cáceres. The new addition to the programme is Las Mengachas (Alcuéscar, Cáceres), one of the most celebrated open wild boar drives in Spanish game shooting.',cal_label:'Programme 2026 · 2027',cal_h2:'Driven Shoots<br><em>Open</em> &amp; <em>Private</em>',cal_bajada:'Seven estates in Badajoz, Ciudad Real, Toledo and Cáceres. Open and private driven shoots.',badge_nueva:'NEW',badge_cerrada:'PRIVATE',badge_cerrada_sm:'Private',mes_oct:'October 2026',mes_nov:'November 2026',mes_dic:'December 2026',mes_ene:'January 2027',cupos_vgh:'Open: stags, fallow deer,<br>hinds &amp; wild boar',cupos_vj2h:'Open: stags, wild boar<br>&amp; 1 hind',cupos_vcj:'Open: stags,<br>red deer &amp; wild boar',cupos_libre:'Unlimited quota · expected<br>65–70 wild boar',cupos_5j1m:'5 wild boar, 1 mouflon,<br>hinds free',cupos_2mj:'2 mouflons, wild boar<br>&amp; hinds free',ver_det:'View details →',resumen_label:'Summary',resumen_h2:'Full <em>Programme</em>',th_fecha:'Date',th_finca:'Estate',th_puestos:'Positions',th_localidad:'Location',th_cupos:'Quotas',tabla_nota:'* The organisers reserve the right to change the date of any drive if deemed necessary for the best conduct of the event.',cont_label:'Information &amp; Bookings',cont_h2:'Reserve your <em>position</em>',cont_bajada:'Places are limited. Please contact us directly to confirm availability.',cont_etiq_email:'Email',cont_etiq_tel:'Phone · WhatsApp',album_label:'Gallery',album_h2:'Images',galeria_sub:'Driven Shoots · Mancha Ibérica Hunting Services',prensa_label:'Press',prensa_h2:'Lances <em>&amp; Ladras</em>',prensa_etiq1:'Lances &amp; Ladras · No. 8 · Season 2025/2026',prensa_titulo1:'Mancha Ibérica Triumphs Again!',prensa_txt1a:'Mancha Ibérica knows exactly what it is doing and never drops its standards. Quietly and in its own way, year after year it delivers brilliant seasons — a concise yet highly attractive and dependable programme.',prensa_txt1b:'Aarón and Paco, the driving force behind the organisation, are like those conscientious, hard-working students who never drop below a merit or a distinction. The two La Lancha open drives, together with Hoya de Mortero, perfectly illustrate what shooting with Mancha Ibérica means: pure enjoyment and a guarantee of success.',prensa_link:'Read full article →',prensa_etiq2:'Lances &amp; Ladras · No. 16 · Season 2024/2025',prensa_titulo2:'Repeating Their Successes',prensa_txt2a:'Shooting with Mancha Ibérica leaves little room for disappointment. The track record speaks for itself — meticulously organised days, prestigious estates, and a work ethic built on consistency and outstanding results.',prensa_txt2b:'This season, Aarón and Paco once again delivered an exceptionally distinguished campaign, reinforcing a shooting legacy built on steadfastness, the quality of their estates, and the satisfaction of every gun.',fotos_label:'Shoot Photography',fotos_h2:'Moments <em>in the Field</em>',foot_sub:'Hunting Services',foot_datos:'manchaiberica@gmail.com · 677 507 492 · 606 613 167<br>The organisers reserve the right to change the date of any drive if deemed necessary for the best conduct of the event.',m_puestos:'Positions',m_cupos:'Quotas',m_nota:'Note',m_cerrado:'Private Driven Shoot',m_wa_reservar:'💬 Book',m_wa_consultar:'💬 Enquire',m_cupos_vgh:'Open for stags, fallow deer, hinds and wild boar',m_cupos_vj2h:'Open for stags, wild boar and 1 hind',m_cupos_vcj:'Open for stags, red deer and wild boar',m_cupos_libre:'Unlimited quota · expectation of 65–70 wild boar',m_nota_m4:'One of the most celebrated open wild boar drives in Spanish game shooting. New addition to the Mancha Ibérica programme.',m_cupos_5j1m:'5 wild boar, 1 mouflon, hinds free',m_precio:'Price on application.',m_cupos_2mj:'2 mouflons, wild boar and hinds free',banda:['Badajoz','Cáceres','Stags','Fallow Deer','Hinds','Wild Boar','Prestigious Estates','Outstanding Results'],nav_nosotros:'About',nav_monterias:'Programme',nav_galeria:'Gallery',nav_prensa:'Press',nav_contacto:'Contact',vendida:'SOLD OUT',m_wa_otras_fechas:'💬 Enquire about other dates'}};
 
 function setLang(lang){
   var isEn=lang==='en';
